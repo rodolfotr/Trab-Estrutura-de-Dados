@@ -1,2 +1,0 @@
-# Trabalhos
-Just a repository!
