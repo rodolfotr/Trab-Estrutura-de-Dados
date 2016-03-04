@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1457113330 source:c:\users\rodolfo\desktop\estrutura de dados\matriz mult\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
