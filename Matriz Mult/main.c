@@ -4,32 +4,32 @@
 
 int main(){
 
-    int linha, coluna;
-    int x, y;
-
-    printf("Numero de linhas: \n");
-    scanf("%d", &linha);
-
     srand( (unsigned)time(NULL) );
 
-    for(x = 0; x < linha; x++){
-        printf("Numero de colunas em cada linha: \n");
-        scanf("%d", &coluna);
-        y = coluna;
-        for(y = 0; y < coluna; y++){
-            int MatrizM[x][y];
-            MatrizM[x][y] = rand()%10;
+    int linhas, i, j;
+
+    printf("Quantas linhas: \n");
+    scanf("%d", &linhas);
+
+    int colunas[linhas];
+
+    int **MatrizM = malloc(linhas * sizeof(int*));
+
+    for (i=0; i<linhas; i++){
+        printf("Quantas colunas: \n");
+        scanf("%d", &colunas[i]);
+        MatrizM[i]= malloc(colunas[i] * sizeof(int));
+        for (j=0; j<colunas[i]; j++){
+            MatrizM[i][j]= rand()%20;
+
         }
     }
-
-
-
-    for(linha = 0; linha < x; linha++){
-        for(coluna = 0; coluna < y; coluna++){
-            int MatrizM[x][y];
-            printf("%d\n", MatrizM[x][y]);
-
+    for (i=0; i<linhas; i++){
+        printf("\n");
+        printf("%d   ", MatrizM[i]);
+        for (j=0; j<colunas[i]; j++){
+            printf("%d ", MatrizM[i][j]);
         }
     }
-
 }
+
